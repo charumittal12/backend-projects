@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <% if (query) { %>
+        <h2>Results for "<%= query %>":</h2>
+
+        <% if (results.length > 0) { %>
+            <ul>
+                <% results.forEach(result => { %>
+                    <li><%= result %></li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No results found for "<%= query %>".</p>
+        <% } %>
+    <% } else { %>
+        <p>Please enter a search term.</p>
+    <% } %>
+
+    <a href="/search">Back to Search</a>
+</body>
+</html>
